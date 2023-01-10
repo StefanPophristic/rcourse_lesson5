@@ -5,8 +5,10 @@
 # Script for analysis
 ############
 
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
 ## READ IN DATA ####
-source("scripts/rcourse_lesson5_cleaning.R")
+source("rcourse_lesson5_cleaning.R")
 
 ## LOAD PACKAGES ####
 library(tidyr)

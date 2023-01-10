@@ -5,9 +5,10 @@
 # Script for figures
 ############
 
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 ## READ IN DATA ####
-source("scripts/rcourse_lesson5_cleaning.R")
+source("rcourse_lesson5_cleaning.R")
 
 ## LOAD PACKAGES ####
 library(ggplot2)
@@ -50,7 +51,7 @@ incumbent_histogram_full.plot = ggplot(data_figs, aes(x = perc_votes_incumbent,
   facet_grid(incumbent_party ~ civil_war) +
   scale_fill_manual(values = c("blue", "red"))
 
-pdf("figures/incumbent_histogram_full.pdf")
+pdf("../figures/incumbent_histogram_full.pdf")
 incumbent_histogram_full.plot
 dev.off()
 
@@ -62,7 +63,7 @@ incumbent_histogram_sum.plot = ggplot(data_figs_state_sum, aes(x = perc_incumben
   facet_grid(incumbent_party ~ civil_war) +
   scale_fill_manual(values = c("blue", "red"))
 
-pdf("figures/incumbent_histogram_sum.pdf")
+pdf("../figures/incumbent_histogram_sum.pdf")
 incumbent_histogram_sum.plot
 dev.off()
 
@@ -75,7 +76,7 @@ incumbent_boxplot.plot = ggplot(data_figs_state_sum, aes(x = civil_war,
   geom_hline(yintercept = 50) +
   scale_fill_manual(values = c("blue", "red"))
 
-pdf("figures/incumbent_boxplot.pdf")
+pdf("../figures/incumbent_boxplot.pdf")
 incumbent_boxplot.plot
 dev.off()
 
@@ -91,6 +92,7 @@ incumbent_barplot.plot = ggplot(data_figs_sum, aes(x = civil_war,
   geom_hline(yintercept = 50) +
   scale_fill_manual(values = c("blue", "red"))
 
-pdf("figures/incumbent_barplot_sub.pdf")
+pdf("../figures/incumbent_barplot_sub.pdf")
 incumbent_barplot.plot
 dev.off()
+
